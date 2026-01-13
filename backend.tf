@@ -18,10 +18,11 @@
 
 terraform {
   backend "s3" {
-    bucket       = "terraform-state-huey-20240101" # Replace with your bucket name
-    key          = "global/terraform.tfstate"
-    region       = "eu-west-1"
-    use_lockfile = true
-    encrypt      = true
+    bucket         = "terraform-state-huey-20240101"
+    key            = "global/terraform.tfstate"
+    region         = "eu-west-1"
+    dynamodb_table = "terraform-state-lock" # lock table name
+    encrypt        = true
+    # use_lockfile = true    # optional/newer param; uncomment if desired per TF docs
   }
 }

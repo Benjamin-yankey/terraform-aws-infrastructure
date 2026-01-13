@@ -35,3 +35,9 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+# Local environment files
+*.env
+*.tfvars    
+locks.json
+lock-backup.json
+errored.tfstate
